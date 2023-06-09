@@ -15,8 +15,12 @@ It is a draft.
 ### ESL: Ministers
 
 - Animal Minister (e.g: Olaf)
+- Anonymous Minister (e.g: gizmore)
 - Art Minister
+- Culture Minister (e.g; Mutti)
 - Family Minister
+- Fish Minister
+- Insect Minister (e.g; Horus)
 - Nature Minister (e.g; )
 - Party Menister (e.: )
 - Peace Minister (e.g: Kai Wöhrle)
@@ -28,11 +32,23 @@ It is a draft.
 - Transport Minister (e.g: )
 - Youth Minister (e.g: spaceone)
 
+
+### ESL: Ministers
+
+
+
+
 ### ESL: Laws
+
+Rules are always in a fluid state.
+To have a rule applied, 50% of the count of active civilians have to get liked.
+Ministers get 5 times the voting power as a civilian.
+There are multiple ministers possible for each minister rank.
+If a rule changes it's state, a history entry is made.
+
 
 Rules can be proposed and have to be voted upon
 Deletion of laws is also possible.
-Ministers get twice the voting power as a civilian.
 A civilian has the power of vote of his fraction of his country.
 
 ### ESL: Rule Proposes
