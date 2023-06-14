@@ -12,6 +12,7 @@ It is a draft.
 
 - iamben
 
+
 ### ESL: Ministers
 
 - Animal Minister (e.g: Olaf)
@@ -51,11 +52,13 @@ Rules can be proposed and have to be voted upon
 Deletion of laws is also possible.
 A civilian has the power of vote of his fraction of his country.
 
+
 ### ESL: Rule Proposes
 
 1) Dogs are allowed to fecatize in green side areas and trees.
 To fertilize and remove waste
 2) 
+3) The Tiara is forbidden to be worn in the combat zone.
 
 
 ### ESL: Features
