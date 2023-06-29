@@ -53,12 +53,18 @@ Deletion of laws is also possible.
 A civilian has the power of vote of his fraction of his country.
 
 
-### ESL: Rule Proposes
+### ESL: Real World Rule Proposes
 
 1) Dogs are allowed to fecatize in green side areas and trees.
-To fertilize and remove waste
+To fertilize and remove waste.
+2) Dog tax is canceled.
+3) Mass Killing weaponry is forbidden
+4) 
+
+### ESL: Combat Zone Rule Proposes
+
+1) The Tiara is forbidden to be worn in the combat zone.
 2) 
-3) The Tiara is forbidden to be worn in the combat zone.
 
 
 ### ESL: Features
