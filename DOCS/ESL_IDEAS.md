@@ -29,7 +29,7 @@ It is a draft.
 - Resource Minister
 - Science Minister (e.g: )
 - Social Menister (e.g: )
-- Technical Staff (e.g: dloser, tehron)
+- Technical Staff Minister (e.g: dloser, tehron)
 - Transport Minister (e.g: )
 - Youth Minister (e.g: spaceone)
 
