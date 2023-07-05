@@ -12,6 +12,7 @@ use GDO\Votes\WithLikes;
 
 /**
  *
+ * @see WithLikes
  */
 class ESL_Rule extends GDO
 {

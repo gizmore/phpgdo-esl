@@ -59,7 +59,8 @@ A civilian has the power of vote of his fraction of his country.
 To fertilize and remove waste.
 2) Dog tax is canceled.
 3) Mass Killing weaponry is forbidden
-4) 
+4) It is forbidden to do harm others
+5) 
 
 ### ESL: Combat Zone Rule Proposes
 

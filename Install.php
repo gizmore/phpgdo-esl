@@ -14,9 +14,13 @@ class Install
 	public static function install(): void
 	{
 		self::installPermissions();
+        self::installGizmore();
+        self::installPresidents();
+        self::installMinisters();
+        self::installRules();
 	}
 
-	public static function installPermissions(): void
+	private static function installPermissions(): void
 	{
 		$permissions = [
 			'president',
@@ -28,5 +32,22 @@ class Install
 			GDO_Permission::create($permission);
 		}
 	}
+
+    private static function installGizmore(): void
+    {
+        
+    }
+
+    private static function installPresidents()
+    {
+    }
+
+    private static function installMinisters()
+    {
+    }
+
+    private static function installRules()
+    {
+    }
 
 }
