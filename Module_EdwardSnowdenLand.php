@@ -39,6 +39,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             ESL_Aspirings::class,
             ESL_AspirantLikes::class,
             ESL_Rule::class,
+            ESL_RuleComments::class,
             ESL_RuleLikes::class,
         ];
     }
