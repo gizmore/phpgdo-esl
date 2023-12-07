@@ -48,9 +48,9 @@ class Module_EdwardSnowdenLand extends GDO_Module
     public function onInitSidebar(): void
     {
         $bar = GDT_Page::instance()->leftBar();
-        $bar->addField(GDT_Link::make('current_president')->href($this->href('CurrentPresident')));
-        $bar->addField(GDT_Link::make('current_votings')->href($this->href('CurrentVotings')));
-        $bar->addField(GDT_Link::make('mt_esl_suggestpresident')->href($this->href('SuggestPresident')));
+//        $bar->addField(GDT_Link::make('current_president')->href($this->href('CurrentPresident')));
+//        $bar->addField(GDT_Link::make('current_votings')->href($this->href('CurrentVotings')));
+//        $bar->addField(GDT_Link::make('mt_esl_suggestpresident')->href($this->href('SuggestPresident')));
     }
 
     public function getConfig(): array
