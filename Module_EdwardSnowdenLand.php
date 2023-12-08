@@ -31,6 +31,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
 		return [
             'Account',
             'Bootstrap5Theme',
+            'IP2Country',
             'FontAwesome',
             'Invite',
             'JQueryAutocomplete',
@@ -55,6 +56,9 @@ class Module_EdwardSnowdenLand extends GDO_Module
     public function onInitSidebar(): void
     {
         $bar = GDT_Page::instance()->leftBar();
+
+        $bar->addField(GDT_CountryExt::make('esl_country'));
+
 //        $bar->addField(GDT_Link::make('current_president')->href($this->href('CurrentPresident')));
 //        $bar->addField(GDT_Link::make('current_votings')->href($this->href('CurrentVotings')));
 //        $bar->addField(GDT_Link::make('mt_esl_suggestpresident')->href($this->href('SuggestPresident')));
