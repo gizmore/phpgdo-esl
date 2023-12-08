@@ -38,4 +38,5 @@ Wir helfen auch gern bei allen privaten Problemen.</p>
     <li>Kein Flood (lieber eine lange Nachricht statt viele kurze)</li>
     <li>Keine Gewalt</li>
     <li>Keine Diskriminierung</li>
+    <li>Keine illegalen Inhalte (Deutscher Server)</li>
 </ul>

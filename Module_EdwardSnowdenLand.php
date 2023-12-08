@@ -38,6 +38,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'Invite',
             'JQueryAutocomplete',
             'Mail',
+            'News',
             'Register',
             'Votes',
 		];
@@ -58,8 +59,9 @@ class Module_EdwardSnowdenLand extends GDO_Module
     public function onInitSidebar(): void
     {
         $bar = GDT_Page::instance()->leftBar();
-
         $bar->addField(GDT_CountryExt::make('esl_country'));
+        $bar->addField(GDT_Link::make('mt_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));
+
 
 //        $bar->addField(GDT_Link::make('current_president')->href($this->href('CurrentPresident')));
 //        $bar->addField(GDT_Link::make('current_votings')->href($this->href('CurrentVotings')));

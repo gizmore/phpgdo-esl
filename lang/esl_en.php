@@ -5,6 +5,9 @@ return array(
     # Home
     'mt_edwardsnowdenland_home' => 'Willkommen',
 
+    # Rules
+    'mt_edwardsnowdenland_rules' => 'Rules',
+
     # Suggest President
     'mt_esl_suggestpresident' => 'Suggest President',
     'md_esl_suggestpresident' => 'Suggest the next Internet President. A president is elected twice a week.',
