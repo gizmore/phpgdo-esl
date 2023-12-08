@@ -3,6 +3,8 @@
 namespace GDO\EdwardSnowdenLand;
 
 use GDO\Core\GDO_Module;
+use GDO\Core\Method;
+use GDO\EdwardSnowdenLand\Method\Home;
 use GDO\UI\GDT_Link;
 use GDO\UI\GDT_Page;
 use GDO\User\GDT_User;
@@ -14,7 +16,12 @@ use GDO\User\GDT_User;
 class Module_EdwardSnowdenLand extends GDO_Module
 {
 
-	public function onLoadLanguage(): void
+    public function defaultMethod(): Method
+    {
+        return Home::make();
+    }
+
+    public function onLoadLanguage(): void
 	{
 		$this->loadLanguage('lang/esl');
 	}
