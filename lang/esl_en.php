@@ -2,6 +2,9 @@
 return array(
 	'module_esl' => 'Edward Snowden Land',
 
+    # Home
+    'mt_edwardsnowdenland_home' => 'Willkommen',
+
     # Suggest President
     'mt_esl_suggestpresident' => 'Suggest President',
     'md_esl_suggestpresident' => 'Suggest the next Internet President. A president is elected twice a week.',

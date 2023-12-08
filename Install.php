@@ -2,7 +2,10 @@
 
 namespace GDO\EdwardSnowdenLand;
 
+use GDO\Core\GDO_DBException;
+use GDO\Country\GDO_Country;
 use GDO\User\GDO_Permission;
+use GDO\User\GDO_User;
 
 /**
  * Install basic Government
@@ -11,8 +14,23 @@ use GDO\User\GDO_Permission;
  */
 class Install
 {
-	public static function install(): void
+    /**
+     * @throws GDO_DBException
+     */
+    private static function installCountry(): void
+    {
+        $pop = GDO_User::table()->countWhere();
+        GDO_Country::blank([
+            'c_iso' => 'XX',
+            'c_iso3' => 'XXX',
+            'c_phonecode' => null,
+            'c_population' => $pop,
+        ])->softReplace();
+    }
+
+    public static function install(): void
 	{
+        self::installCountry();
 		self::installPermissions();
         self::installGizmore();
         self::installPresidents();
@@ -49,5 +67,6 @@ class Install
     private static function installRules()
     {
     }
+
 
 }
