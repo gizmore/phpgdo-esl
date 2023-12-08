@@ -10,7 +10,7 @@
 
 <p>Das ESL wird als fiktives Land hinzugefügt, wo wir Gesetze für das Internet aufstellen.</p>
 
-<p>Ein Etappenziel ist ein offener Brief an Frau Sahra Wagenknecht, und eine Petition mit der Forderung nach direkter Demokratie.</p>
+<p>Ein Etappenziel ist eine Petition mit der Forderung nach direkter Demokratie.</p>
 
 <h3>Hintergrund</h3>
 
