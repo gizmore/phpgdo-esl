@@ -30,8 +30,10 @@ class Module_EdwardSnowdenLand extends GDO_Module
 	{
 		return [
             'Account',
+            'Avatar',
             'Bootstrap5Theme',
             'IP2Country',
+            'File',
             'FontAwesome',
             'Invite',
             'JQueryAutocomplete',

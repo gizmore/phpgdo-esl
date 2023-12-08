@@ -26,7 +26,7 @@ Wir helfen auch gern bei allen privaten Problemen.</p>
 
 <pre>
     <a href="https://chat.whatsapp.com/HV73ewIenE6GtSbvKGCBd3">WhatsApp</a>
-    Telegram
+    <a href="https://t.me/+1tDmuWQwcbdhODAy">Telegram</a>
     IRC
 </pre>
 
