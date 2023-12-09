@@ -47,6 +47,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'Avatar',
             'Bootstrap5Theme',
             'IP2Country',
+            'Favicon',
             'File',
             'FontAwesome',
             'Invite',

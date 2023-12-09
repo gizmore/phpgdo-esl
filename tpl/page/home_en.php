@@ -35,7 +35,7 @@
 
 <ul>
     <li>Minimum age 18 years</li>
-    <li>Make excuses</li>
+    <li>Let others finish their talk</li>
     <li>No flood (better one long message instead of many short ones)</li>
     <li>No violence</li>
     <li>No discrimination</li>
