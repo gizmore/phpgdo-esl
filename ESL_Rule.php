@@ -11,16 +11,12 @@ use GDO\Core\GDT_CreatedBy;
 use GDO\Country\GDT_Country;
 use GDO\UI\GDT_Message;
 use GDO\UI\GDT_Title;
-use GDO\Votes\WithLikes;
+use GDO\Votes\WithVotes;
 
-/**
- *
- * @see WithLikes
- */
 class ESL_Rule extends GDO
 {
 
-	use WithLikes;
+	use WithVotes;
     use CommentedObject;
 
 
@@ -29,8 +25,8 @@ class ESL_Rule extends GDO
 		return [
 			GDT_AutoInc::make('rule_id'),
             GDT_Country::make('rule_country')->notNull(),
-			GDT_Title::make('rule_title')->notNull(),
-			GDT_Message::make('rule_description')->notNull(),
+			GDT_Title::make('rule_title')->notNull()->label('topic'),
+			GDT_Message::make('rule_description')->label('description'),
 
             GDT_Message::make('rule_current'), # IST
             GDT_Message::make('rule_problem'), # PROBLEM
@@ -38,11 +34,12 @@ class ESL_Rule extends GDO
             GDT_Message::make('rule_government'), # THEY
             GDT_Message::make('rule_mistake'), # FEHLER
 
-            GDT_Message::make('rule_suggestion')->notNull(), # WE
+            GDT_Message::make('rule_suggestion'), # WE
             GDT_Message::make('rule_goal')->notNull(), # GOAL
 
-            GDT_Checkbox::make('rule_discuss_state')->initial('1'), # Voting time?
+            GDT_Checkbox::make('rule_discuss_state'), # Voting time?
             GDT_Checkbox::make('rule_vote_state'), # Voting time?
+            GDT_Checkbox::make('rule_petition_state'), # Petition created?
 
             GDT_CreatedAt::make('rule_created'),
 			GDT_CreatedBy::make('rule_creator'),

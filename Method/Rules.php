@@ -16,7 +16,7 @@ class Rules extends \GDO\Table\MethodQueryTable
     public function gdoHeaders(): array
     {
         $table = $this->gdoTable();
-        return $table->gdoColumnsOnly('rule_id', 'rule_title', 'rule_creator', 'rule_created');
+        return $table->gdoColumnsOnly('rule_id', 'rule_title', 'rule_description', 'rule_created');
     }
 
 }

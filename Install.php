@@ -73,7 +73,8 @@ class Install
             ])->insert();
 
         }
-        $password = require Module_EdwardSnowdenLand::instance()->filePath('gizmore.php');
+        $secrets = require Module_EdwardSnowdenLand::instance()->filePath('secret.php');
+        $password = $secrets['gizmore_pass'];
         $user->saveSettingVar('Login', 'password', BCrypt::create($password)->__toString());
 
         if (!GDO_Avatar::forUser($user)->isPersisted())
@@ -98,6 +99,12 @@ class Install
 
     private static function installRules()
     {
+        $data = [
+            '1' => [
+                'country' => 'DE',
+                'topic'
+            ],
+        ];
     }
 
 

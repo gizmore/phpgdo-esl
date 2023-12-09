@@ -2,9 +2,14 @@
 
 namespace GDO\EdwardSnowdenLand;
 
+use GDO\Core\GDO_DBException;
+use GDO\Core\GDO_Exception;
 use GDO\Core\GDO_Module;
+use GDO\Core\GDT_Method;
 use GDO\Core\Method;
+use GDO\Country\GDT_Country;
 use GDO\EdwardSnowdenLand\Method\Home;
+use GDO\EdwardSnowdenLand\Method\SetCountry;
 use GDO\UI\GDT_Link;
 use GDO\UI\GDT_Page;
 use GDO\User\GDT_User;
@@ -26,7 +31,16 @@ class Module_EdwardSnowdenLand extends GDO_Module
 		$this->loadLanguage('lang/esl');
 	}
 
-	public function getDependencies(): array
+    /**
+     * @throws GDO_DBException
+     * @throws GDO_Exception
+     */
+    public function onInstall(): void
+    {
+        Install::install();
+    }
+
+    public function getDependencies(): array
 	{
 		return [
             'Account',
@@ -44,6 +58,8 @@ class Module_EdwardSnowdenLand extends GDO_Module
 		];
 	}
 
+
+
     public function getClasses(): array
     {
         return [
@@ -51,7 +67,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             ESL_AspirantLikes::class,
             ESL_Rule::class,
             ESL_RuleComments::class,
-            ESL_RuleLikes::class,
+            ESL_RuleVotes::class,
         ];
     }
 
@@ -59,8 +75,8 @@ class Module_EdwardSnowdenLand extends GDO_Module
     public function onInitSidebar(): void
     {
         $bar = GDT_Page::instance()->leftBar();
-        $bar->addField(GDT_CountryExt::make('esl_country'));
-        $bar->addField(GDT_Link::make('mt_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));
+        $bar->addField(GDT_Method::make()->method(SetCountry::make()));
+        $bar->addField(GDT_Link::make('list_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));
 
 
 //        $bar->addField(GDT_Link::make('current_president')->href($this->href('CurrentPresident')));
@@ -72,6 +88,13 @@ class Module_EdwardSnowdenLand extends GDO_Module
     {
         return [
             GDT_User::make('president')->notNull()->initial('1'),
+        ];
+    }
+
+    public function getUserSettings(): array
+    {
+        return [
+            GDT_Country::make('esl_country'),
         ];
     }
 

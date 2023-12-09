@@ -6,7 +6,8 @@ return array(
     'mt_edwardsnowdenland_home' => 'Willkommen',
 
     # Rules
-    'mt_edwardsnowdenland_rules' => 'Rules',
+    'list_edwardsnowdenland_rules' => 'Rules',
+    'topic' => 'Topic',
 
     # Suggest President
     'mt_esl_suggestpresident' => 'Suggest President',
