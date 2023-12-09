@@ -8,9 +8,11 @@
     Bei Mehrheit erstellen wir eine Petition für ein Thema.
 </p>
 
-<p>Das ESL wird als fiktives Land hinzugefügt, wo wir Gesetze für das Internet aufstellen.</p>
+<p>Das ESL wird als fiktives Land hinzugefügt, wo wir Regelvorschläge für das Internet aufstellen.</p>
 
 <p>Ein Etappenziel ist eine Petition mit der Forderung nach direkter Demokratie.</p>
+
+<p>Hinweis: Dieses Projekt wurde nicht von Edward Snowden erstellt oder abgesegnet. (noch nicht)</p>
 
 <h3>Hintergrund</h3>
 

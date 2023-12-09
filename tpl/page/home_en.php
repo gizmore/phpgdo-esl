@@ -9,9 +9,11 @@
     We also help each other in this community.
 </p>
 
-<p>The ESL is added as a fictional country where we make laws for the Internet.</p>
+<p>The ESL is added as a fictional country where we make rule proposals for the Internet.</p>
 
 <p>One milestone is a petition calling for direct democracy.</p>
+
+<p>Please note that this project is not officially supported or maintained by Edward Snowden. (yet)</p>
 
 <h3>Background</h3>
 
@@ -34,7 +36,7 @@
 <h3>Chat rules</h3>
 
 <ul>
-    <li>Minimum age 18 years</li>
+    <li>Minimum age is 18 years</li>
     <li>Let others finish their talk</li>
     <li>No flood (better one long message instead of many short ones)</li>
     <li>No violence</li>

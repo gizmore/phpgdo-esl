@@ -9,8 +9,10 @@ use GDO\Core\GDO_Exception;
 use GDO\Country\GDO_Country;
 use GDO\Crypto\BCrypt;
 use GDO\File\GDO_File;
+use GDO\Language\Module_Language;
 use GDO\User\GDO_Permission;
 use GDO\User\GDO_User;
+use GDO\User\GDO_UserPermission;
 use GDO\User\GDT_UserType;
 
 /**
@@ -39,6 +41,7 @@ class Install
      */
     public static function install(): void
 	{
+        self::installConfig();
         self::installCountry();
 		self::installPermissions();
         self::installGizmore();
@@ -46,6 +49,11 @@ class Install
         self::installMinisters();
         self::installRules();
 	}
+
+    private static function installConfig(): void
+    {
+        Module_Language::instance()->saveConfigVar('languages', '["en","de"]');
+    }
 
 	private static function installPermissions(): void
 	{
@@ -76,6 +84,9 @@ class Install
         $secrets = require Module_EdwardSnowdenLand::instance()->filePath('secret.php');
         $password = $secrets['gizmore_pass'];
         $user->saveSettingVar('Login', 'password', BCrypt::create($password)->__toString());
+
+        GDO_UserPermission::grant($user, GDO_Permission::ADMIN);
+        GDO_UserPermission::grant($user, GDO_Permission::STAFF);
 
         if (!GDO_Avatar::forUser($user)->isPersisted())
         {

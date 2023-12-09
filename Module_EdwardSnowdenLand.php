@@ -21,6 +21,8 @@ use GDO\User\GDT_User;
 class Module_EdwardSnowdenLand extends GDO_Module
 {
 
+    public int $priority = 150;
+
     public function defaultMethod(): Method
     {
         return Home::make();
@@ -43,9 +45,13 @@ class Module_EdwardSnowdenLand extends GDO_Module
     public function getDependencies(): array
 	{
 		return [
+            'AboutMe',
             'Account',
+            'ActivationAlert',
+            'Admin',
             'Avatar',
             'Bootstrap5Theme',
+            'Cronjob',
             'IP2Country',
             'Favicon',
             'File',

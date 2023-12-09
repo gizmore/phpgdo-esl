@@ -19,7 +19,7 @@
     <li><a href="https://www.youtube.com/watch?v=5IpYOF4Hi6Q" rel="nofollow">Pink Floyd - Another Brick in the Wall<a></li>
     <li><a href="https://www.youtube.com/watch?v=jjQgpB8eB7M" rel="nofollow">Bob Marley - Buffalo Soldier<a></li>
     <li><a href="https://www.youtube.com/watch?v=9ZpxaeICYyg" rel="nofollow">Bob Marley - Redemption Song<a></li>
-    <li><a href="" rel="nofollow"><a></li>
+    <li><a href="https://www.youtube.com/watch?v=Zw_tiJlCo3E" rel="nofollow">Omnia - Dance until we die<a></li>
     <li><a href="" rel="nofollow"><a></li>
     <li><a href="" rel="nofollow"><a></li>
     <li><a href="" rel="nofollow"><a></li>
