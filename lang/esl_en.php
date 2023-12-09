@@ -9,6 +9,10 @@ return array(
     'list_edwardsnowdenland_rules' => 'Rules',
     'topic' => 'Topic',
 
+    # Music
+    'mt_edwardsnowdenland_music' => 'Friedensmusik',
+    'md_edwardsnowdenland_music' => 'Musik bringt die Menschen zusammen. Hier ist eine Playlist mit Liedern die zum Thema Frieden passen. Vorschläge sind Willkommen.',
+
     # Suggest President
     'mt_esl_suggestpresident' => 'Suggest President',
     'md_esl_suggestpresident' => 'Suggest the next Internet President. A president is elected twice a week.',

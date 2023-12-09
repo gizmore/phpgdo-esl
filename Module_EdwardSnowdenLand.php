@@ -77,6 +77,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
         $bar = GDT_Page::instance()->leftBar();
         $bar->addField(GDT_Method::make()->method(SetCountry::make()));
         $bar->addField(GDT_Link::make('list_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));
+        $bar->addField(GDT_Link::make('mt_edwardsnowdenland_music')->href(href('EdwardSnowdenLand', 'Music')));
 
 
 //        $bar->addField(GDT_Link::make('current_president')->href($this->href('CurrentPresident')));
