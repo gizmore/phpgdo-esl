@@ -17,6 +17,7 @@
 <p>In Deutschland sind große Teile der Bevölkerung unzufrieden mit der Politik.
 Die derzeitige Koalition scheint festgefahren. Lobbyismus regiert stark mit, und es gibt weitere Mißstände.
 Wir wollen die Welt mit diesem Projekt ein Stückchen besser und gerechter machen.
+    Auch helfen wir uns in dieser Community.
 </p>
 
 <h3>Unterstützung</h3>

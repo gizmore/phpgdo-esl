@@ -74,6 +74,9 @@ class Module_EdwardSnowdenLand extends GDO_Module
 
     public function onInitSidebar(): void
     {
+        $bar = GDT_Page::instance()->topBar();
+        $bar->addField(GDT_Link::make('module_esl')->href(href('EdwardSnowdenLand', 'Home')));
+
         $bar = GDT_Page::instance()->leftBar();
         $bar->addField(GDT_Method::make()->method(SetCountry::make()));
         $bar->addField(GDT_Link::make('list_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));

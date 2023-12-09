@@ -4,6 +4,8 @@ return array(
 
     # Home
     'mt_edwardsnowdenland_home' => 'Willkommen',
+    'md_edwardsnowdenland_home' => 'Edward Snowden Land is a social experiment for direct democracy, because many governments fail on many topics.
+     We examine the laws of different countries and suggest improvements. These are discussed and then voted on. If there is a majority, we create a petition for a topic.',
 
     # Rules
     'list_edwardsnowdenland_rules' => 'Rules',
@@ -12,6 +14,11 @@ return array(
     # Music
     'mt_edwardsnowdenland_music' => 'Friedensmusik',
     'md_edwardsnowdenland_music' => 'Musik bringt die Menschen zusammen. Hier ist eine Playlist mit Liedern die zum Thema Frieden passen. Vorschläge sind Willkommen.',
+
+
+
+
+
 
     # Suggest President
     'mt_esl_suggestpresident' => 'Suggest President',

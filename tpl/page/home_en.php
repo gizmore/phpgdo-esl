@@ -6,6 +6,7 @@
 <p>We examine the laws of different countries and suggest improvements.
     These are discussed and then voted on.
     If there is a majority, we create a petition for a topic.
+    We also help each other in this community.
 </p>
 
 <p>The ESL is added as a fictional country where we make laws for the Internet.</p>
