@@ -4,6 +4,7 @@ namespace GDO\EdwardSnowdenLand;
 
 use GDO\Avatar\GDO_Avatar;
 use GDO\Avatar\GDO_UserAvatar;
+use GDO\Avatar\Module_Avatar;
 use GDO\Core\GDO_DBException;
 use GDO\Core\GDO_Exception;
 use GDO\Country\GDO_Country;
@@ -53,6 +54,7 @@ class Install
     private static function installConfig(): void
     {
         Module_Language::instance()->saveConfigVar('languages', '["en","de"]');
+        Module_Avatar::instance()->saveConfigVar('hook_sidebar', '0');
     }
 
 	private static function installPermissions(): void
