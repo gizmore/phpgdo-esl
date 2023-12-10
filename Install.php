@@ -60,7 +60,7 @@ class Install
     {
         Module_Language::instance()->saveConfigVar('languages', '["en","de"]');
         Module_Avatar::instance()->saveConfigVar('hook_sidebar', '0');
-        Module_Register::instance()->saveConfigVar('module_enabled', '0');
+        Module_Register::instance()->saveVar('module_enabled', '0');
 
         # Favicon
         $m = Module_Favicon::instance();
@@ -106,6 +106,7 @@ class Install
 
         GDO_UserPermission::grant($user, GDO_Permission::ADMIN);
         GDO_UserPermission::grant($user, GDO_Permission::STAFF);
+        GDO_UserPermission::grant($user, GDO_Permission::CRONJOB);
 
         if (!GDO_Avatar::forUser($user)->isPersisted())
         {
