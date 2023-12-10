@@ -61,6 +61,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'Admin',
             'Avatar',
             'Bootstrap5Theme',
+            'Contact',
             'Cronjob',
             'IP2Country',
             'Favicon',

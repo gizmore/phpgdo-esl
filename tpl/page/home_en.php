@@ -24,12 +24,14 @@
 
 <h3>Support us</h3>
 
-<p>Register or join the discussion on WhatsApp or Telegram.
-    We are also happy to help with any private problems.</p>
+<p>Register or just join the discussion in a supported messanger.
+    You can just idle there to show support.
+    We are also happy to help you with any private problems.</p>
 
 <pre>
     <a href="https://chat.whatsapp.com/HV73ewIenE6GtSbvKGCBd3">WhatsApp</a>
     <a href="https://t.me/+1tDmuWQwcbdhODAy">Telegram</a>
+    <a href="https://signal.group/#CjQKIK__Nle940j0NE4H1ZTP9xmTmDcfmJSsH5oMgKo1OBAXEhCv5mpWk2Dz3ztN6bV2XiCm">Signal</a>
     IRC
 </pre>
 

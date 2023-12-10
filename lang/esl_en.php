@@ -11,6 +11,9 @@ return array(
     'list_edwardsnowdenland_rules' => 'Topics',
     'topic' => 'Topic',
 
+    # Add rule
+    'info_esl_create_rule' => 'Please note that you cannot edit your texts anymore, when the topic was put into discussion state.',
+
     # Music
     'mt_edwardsnowdenland_music' => 'Friedensmusik',
     'md_edwardsnowdenland_music' => 'Musik bringt die Menschen zusammen. Hier ist eine Playlist mit Liedern die zum Thema Frieden passen. Vorschläge sind Willkommen.',

@@ -5,7 +5,7 @@
 
 <p>Wir nehmen die Gesetze unterschiedlicher Länder unter die Lupe, und schlagen Verbesserungen vor.
     Diese werden diskutiert und danach wird abgestimmt.
-    Bei Mehrheit erstellen wir eine Petition für ein Thema.
+    Bei Mehrheit erstellen wir eine Petition für das Thema.
 </p>
 
 <p>Das ESL wird als fiktives Land hinzugefügt, wo wir Regelvorschläge für das Internet aufstellen.</p>
@@ -24,12 +24,14 @@ Wir wollen die Welt mit diesem Projekt ein Stückchen besser und gerechter mache
 
 <h3>Unterstützung</h3>
 
-<p>Registriere Dich, oder diskutiere auf WhatsApp oder Telegramm mit.
-Wir helfen auch gern bei allen privaten Problemen.</p>
+<p>Registriere Dich, oder diskutiere mit einem unterstützten Messange mit.
+    Du musst nichts schreiben. Die Nutzerzahl erhöhen und Präsenz zeigen hilft uns schon.
+Wir helfen Dir auch gerne bei privaten Problemen, wenn wir können.</p>
 
 <pre>
     <a href="https://chat.whatsapp.com/HV73ewIenE6GtSbvKGCBd3">WhatsApp</a>
     <a href="https://t.me/+1tDmuWQwcbdhODAy">Telegram</a>
+    <a href="https://signal.group/#CjQKIK__Nle940j0NE4H1ZTP9xmTmDcfmJSsH5oMgKo1OBAXEhCv5mpWk2Dz3ztN6bV2XiCm">Signal</a>
     IRC
 </pre>
 
