@@ -9,6 +9,7 @@ use GDO\Core\GDT_Checkbox;
 use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
 use GDO\Country\GDT_Country;
+use GDO\UI\GDT_Card;
 use GDO\UI\GDT_Message;
 use GDO\UI\GDT_Title;
 use GDO\Votes\WithVotes;
@@ -47,5 +48,27 @@ class ESL_Rule extends GDO
 	}
 
     public function inDiscussion(): bool { return $this->gdoValue('rule_discuss_state'); }
+
+    public function getTitle(): string { return $this->gdoVar('rule_title'); }
+
+    public function getMetaDescr(): string { return $this->gdoVar('rule_description_text'); }
+
+    public function href_view(): string { return href('EdwardSnowdenLand', 'Rule', "&id={$this->getID()}"); }
+
+    public function href_edit(): string { return href('EdwardSnowdenLand', 'RuleEdit', "&id={$this->getID()}"); }
+
+    ##############
+    ### Render ###
+    ##############
+    public function renderCard(): string
+    {
+        $card = GDT_Card::make()->gdo($this);
+        $card->creatorHeader();
+        $card->addFields($this->gdoColumnsOnly(
+            '',
+            ''));
+        return $card->renderCard();
+    }
+
 
 }

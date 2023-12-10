@@ -11,6 +11,9 @@ return array(
     'list_edwardsnowdenland_rules' => 'Topics',
     'topic' => 'Topic',
 
+    # Rule
+    'md_esl_rule' => 'Rule proposal details',
+
     # Add rule
     'info_esl_create_rule' => 'Please note that you cannot edit your texts anymore, when the topic was put into discussion state.',
 

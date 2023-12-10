@@ -136,23 +136,7 @@ class Install
      */
     private static function installRules(): void
     {
-        $data = [
-            '1' => [
-                'country' => 'DE',
-                'topic' => 'Rentenpunkte',
-                'descr' => 'Die Rentenpunkte sind unfair berechnet.',
-                'is' => 'Für ca. €3500 Gehalt im Monat erhält man zur Zeit einen Rentenpunkt.',
-                'problem' => 'Für den Mindestlohn erhält man lediglich ca. 0,3 Rentenpunkte im Jahr. Die Schere zwischen Arm und Reich wird immer breiter. Arbeit lohnt sich nicht.',
-                'gov' => 'Die Regierung will die Rente ein wenig erhöhen',
-                'error' => 'Dies erzeugt hohe Kosten, aber nur bei den Menschen, die bereits eine gute Rente erhalten.',
-                'we' => 'Rentenpunkte sollten nach Arbeitszeit bemessen werden.',
-                'goal' => 'Fleißige Menschen werden belohnt. Ansporn und Zufriedenheit.',
-                'disc' => [
-                    'Mona' => 'Was ist mit Hausfrauen?',
-                ],
-                'petition' => '0',
-            ],
-        ];
+        $data = require Module_EdwardSnowdenLand::instance()->filePath('seed.php');
 
         foreach ($data as $id => $d)
         {
@@ -187,7 +171,7 @@ class Install
             'rule_petition_state' => $data['petition'],
 
             'rule_created' => Time::getDate(1702204452),
-            'rule_creator' => GDO_User::system()->getID(),
+            'rule_creator' => self::gizmore()->getID(),
 
         ])->softReplace();
 
@@ -236,6 +220,14 @@ class Install
             }
         }
         return $user;
+    }
+
+    /**
+     * @throws GDO_DBException
+     */
+    private static function gizmore(): GDO_User
+    {
+        return GDO_User::getByName('gizmore');
     }
 
 }

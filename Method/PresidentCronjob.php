@@ -24,7 +24,7 @@ class PresidentCronjob extends \GDO\Cronjob\MethodCronjob
      */
     public function run(): void
     {
-        $users = ESL_AspirantLikes::table()->select('SUM(like_votes) votes, user.*')
+        $users = ESL_AspirantLikes::table()->select('SUM(like_votes) votes, like_object_t.*')
             ->group('like_object')->joinObject('like_object')
             ->fetchTable(GDO_User::table())
             ->exec();
