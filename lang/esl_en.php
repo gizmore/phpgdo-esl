@@ -8,7 +8,7 @@ return array(
      We examine the laws of different countries and suggest improvements. These are discussed and then voted on. If there is a majority, we create a petition for a topic.',
 
     # Rules
-    'list_edwardsnowdenland_rules' => 'Rules',
+    'list_edwardsnowdenland_rules' => 'Topics',
     'topic' => 'Topic',
 
     # Music

@@ -9,8 +9,10 @@ use GDO\Core\GDO_DBException;
 use GDO\Core\GDO_Exception;
 use GDO\Country\GDO_Country;
 use GDO\Crypto\BCrypt;
+use GDO\Favicon\Module_Favicon;
 use GDO\File\GDO_File;
 use GDO\Language\Module_Language;
+use GDO\Register\Module_Register;
 use GDO\User\GDO_Permission;
 use GDO\User\GDO_User;
 use GDO\User\GDO_UserPermission;
@@ -51,10 +53,25 @@ class Install
         self::installRules();
 	}
 
+    /**
+     * @throws GDO_Exception
+     */
     private static function installConfig(): void
     {
         Module_Language::instance()->saveConfigVar('languages', '["en","de"]');
         Module_Avatar::instance()->saveConfigVar('hook_sidebar', '0');
+        Module_Register::instance()->saveConfigVar('module_enabled', '0');
+
+        # Favicon
+        $m = Module_Favicon::instance();
+        if (!$m->getConfigVar('favicon'))
+        {
+            $path = Module_EdwardSnowdenLand::instance()->filePath('img/logo1.jpg');
+            $file = GDO_File::fromPath('favicon.ico', $path)->insert();
+            $m->saveConfigVar('favicon', $file->getID());
+            $m->updateFavicon();
+        }
+
     }
 
 	private static function installPermissions(): void
@@ -110,7 +127,7 @@ class Install
     {
     }
 
-    private static function installRules()
+    private static function installRules(): void
     {
         $data = [
             '1' => [
@@ -118,6 +135,16 @@ class Install
                 'topic'
             ],
         ];
+
+        foreach ($data as $d)
+        {
+            self::installRule($d);
+        }
+    }
+
+    private static function installRule(array $data)
+    {
+
     }
 
 

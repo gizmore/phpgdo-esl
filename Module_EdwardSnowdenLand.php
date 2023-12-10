@@ -23,6 +23,16 @@ class Module_EdwardSnowdenLand extends GDO_Module
 
     public int $priority = 150;
 
+    public function isSiteModule(): bool
+    {
+        return true;
+    }
+
+    public function getTheme(): ?string
+    {
+        return 'esl';
+    }
+
     public function defaultMethod(): Method
     {
         return Home::make();
