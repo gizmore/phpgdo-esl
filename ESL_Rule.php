@@ -10,8 +10,10 @@ use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
 use GDO\Country\GDT_Country;
 use GDO\UI\GDT_Card;
+use GDO\UI\GDT_Divider;
 use GDO\UI\GDT_Message;
 use GDO\UI\GDT_Title;
+use GDO\User\GDO_User;
 use GDO\Votes\WithVotes;
 
 class ESL_Rule extends GDO
@@ -19,6 +21,13 @@ class ESL_Rule extends GDO
 
 	use WithVotes;
     use CommentedObject;
+
+    public function gdoVoteTable() { return ESL_RuleVotes::table(); }
+
+    public function gdoVoteAllowed(GDO_User $user)
+    {
+
+    }
 
 
 	public function gdoColumns(): array
@@ -29,18 +38,19 @@ class ESL_Rule extends GDO
 			GDT_Title::make('rule_title')->notNull()->label('topic'),
 			GDT_Message::make('rule_description')->label('description'),
 
-            GDT_Message::make('rule_current'), # IST
-            GDT_Message::make('rule_problem'), # PROBLEM
+            GDT_Message::make('rule_current')->label('esl_rule_current'),
+            GDT_Message::make('rule_problem')->label('esl_rule_problem'),
 
-            GDT_Message::make('rule_government'), # THEY
-            GDT_Message::make('rule_mistake'), # FEHLER
+            GDT_Message::make('rule_government')->label('esl_rule_government'),
+            GDT_Message::make('rule_mistake')->label('esl_rule_mistake'),
 
-            GDT_Message::make('rule_suggestion'), # WE
-            GDT_Message::make('rule_goal')->notNull(), # GOAL
+            GDT_Message::make('rule_suggestion')->label('esl_rule_suggestion'),
+            GDT_Message::make('rule_goal')->notNull()->label('esl_rule_goal'),
 
-            GDT_Checkbox::make('rule_discuss_state'), # Voting time?
-            GDT_Checkbox::make('rule_vote_state'), # Voting time?
-            GDT_Checkbox::make('rule_petition_state'), # Petition created?
+            GDT_Checkbox::make('rule_edited_state')->label('esl_rule_edited_state'),
+            GDT_Checkbox::make('rule_discuss_state')->label('esl_rule_discuss_state'),
+            GDT_Checkbox::make('rule_vote_state')->label('esl_rule_vote_state'),
+            GDT_Checkbox::make('rule_petition_state')->label('esl_rule_petition_state'),
 
             GDT_CreatedAt::make('rule_created'),
 			GDT_CreatedBy::make('rule_creator'),
@@ -64,9 +74,20 @@ class ESL_Rule extends GDO
     {
         $card = GDT_Card::make()->gdo($this);
         $card->creatorHeader();
-        $card->addFields($this->gdoColumnsOnly(
-            '',
-            ''));
+        $card->addFields(
+            $this->gdoColumn('rule_country'),
+            $this->gdoColumn('rule_title'),
+            $this->gdoColumn('rule_description'),
+            GDT_Divider::make(),
+            $this->gdoColumn('rule_current'),
+            $this->gdoColumn('rule_problem'),
+            GDT_Divider::make(),
+            $this->gdoColumn('rule_government'),
+            $this->gdoColumn('rule_mistake'),
+            GDT_Divider::make(),
+            $this->gdoColumn('rule_suggestion'),
+            $this->gdoColumn('rule_goal'),
+        );
         return $card->renderCard();
     }
 

@@ -2,8 +2,13 @@
 namespace GDO\EdwardSnowdenLand\Method;
 
 use GDO\Core\GDT;
+use GDO\Core\GDT_Response;
 use GDO\EdwardSnowdenLand\ESL_Rule;
 use GDO\Table\MethodQueryCard;
+use GDO\UI\GDT_AddButton;
+use GDO\UI\GDT_Box;
+use GDO\UI\GDT_Button;
+use GDO\Votes\GDT_VoteSelection;
 
 final class Rule extends MethodQueryCard
 {
@@ -35,11 +40,14 @@ final class Rule extends MethodQueryCard
 
     public function execute(): GDT
     {
-        $response = parent::execute();
-
-
-
-        return $response;
+        $rule = $this->getRule();
+        $response = GDT_Response::make();
+//        $rulehtml = parent::execute();
+        $comments = RuleComments::make()->executeWithInputs($this->getInputs());
+        $actions = GDT_Box::make();
+        $actions->addField(GDT_AddButton::make()->href(href('EdwardSnowdenLand', 'RuleAddComment'))->label('add_comment'));
+        $actions->addField(GDT_VoteSelection::make()->gdo($rule));
+        return $response->addFields($comments, $actions);
     }
 
 

@@ -20,8 +20,8 @@
     <li><a href="https://www.youtube.com/watch?v=jjQgpB8eB7M" rel="nofollow">Bob Marley - Buffalo Soldier<a></li>
     <li><a href="https://www.youtube.com/watch?v=9ZpxaeICYyg" rel="nofollow">Bob Marley - Redemption Song<a></li>
     <li><a href="https://www.youtube.com/watch?v=Zw_tiJlCo3E" rel="nofollow">Omnia - Dance until we die<a></li>
-    <li><a href="" rel="nofollow"><a></li>
-    <li><a href="" rel="nofollow"><a></li>
+    <li><a href="https://www.youtube.com/watch?v=P6zaCV4niKk" rel="nofollow">Cat Stevens - Father &amp; Son<a></li>
+    <li><a href="https://www.youtube.com/watch?v=2nGKqH26xlg" rel="nofollow">Louis Armstrong - What A Wonderful World<a></li>
     <li><a href="" rel="nofollow"><a></li>
     <li><a href="" rel="nofollow"><a></li>
     <li><a href="" rel="nofollow"><a></li>

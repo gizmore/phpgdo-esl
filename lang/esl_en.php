@@ -13,6 +13,18 @@ return array(
 
     # Rule
     'md_esl_rule' => 'Rule proposal details',
+    'esl_rule_current' => 'Current state',
+    'esl_rule_problem' => 'Rule Problem',
+
+    'esl_rule_government' => 'Planned by government',
+    'esl_rule_mistake' => 'Their mistake',
+    'esl_rule_suggestion' => 'Our suggestion',
+    'esl_rule_goal' => 'Our goal',
+    'esl_rule_edited_state' => 'Finished editing?',
+    'esl_rule_discuss_state' => 'Discussion open?',
+    'esl_rule_vote_state' => 'Voting open?',
+    'esl_rule_petition_state'  => 'Petition created?',
+
 
     # Add rule
     'info_esl_create_rule' => 'Please note that you cannot edit your texts anymore, when the topic was put into discussion state.',
