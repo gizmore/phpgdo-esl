@@ -12,6 +12,7 @@ return [
         'goal' => 'Fleißige Menschen werden belohnt. Ansporn und Zufriedenheit.',
         'disc' => [
             'Mona' => 'Was ist mit Hausfrauen?',
+            'gizmore' => 'Gute Frage!',
         ],
         'petition' => '0',
     ],

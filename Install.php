@@ -216,7 +216,7 @@ class Install
                 $user = GDO_User::blank([
                     'user_type' => GDT_UserType::GUEST,
                     'user_guest_name' => $username,
-                ]);
+                ])->insert();
             }
         }
         return $user;
