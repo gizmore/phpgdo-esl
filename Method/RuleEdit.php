@@ -133,7 +133,7 @@ final class RuleEdit extends MethodForm
     private function sendDiscussionMail(GDO_User $user, ESL_Rule $rule): void
     {
         $mail = Mail::botMail();
-        $mail->setSubject(tusr($user, t('mails_esl_disc_started', [$rule->getName(), sitename()])));
+        $mail->setSubject(tusr($user, 'mails_esl_disc_started', [$rule->getName(), sitename()]));
         $args = [
             $user->renderUserName(),
             sitename(),
