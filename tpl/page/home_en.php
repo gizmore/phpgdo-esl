@@ -9,7 +9,7 @@
     We also help each other in this community.
 </p>
 
-<p>The ESL is added as a fictional country where we make rule proposals for the Internet.</p>
+<p>The ESL is added as a fictional country where we make rule proposals for the Internet or a perfect state.</p>
 
 <p>One milestone is a petition calling for direct democracy.</p>
 

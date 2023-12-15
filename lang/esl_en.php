@@ -25,9 +25,42 @@ return array(
     'esl_rule_vote_state' => 'Voting open?',
     'esl_rule_petition_state'  => 'Petition created?',
 
+    'esl_div_now' => 'Current situation',
+    'esl_div_gov' => 'The planned changes by the government',
+    'esl_div_we' => 'Our proposed changes',
 
     # Add rule
-    'info_esl_create_rule' => 'Please note that you cannot edit your texts anymore, when the topic was put into discussion state.',
+    'mt_edwardsnowdenland_ruleadd' => 'Add suggestion',
+    'info_esl_create_rule' => 'Please note that you cannot edit your texts anymore, when the topic was put into discussion state. Until then, you can freely edit your rule after creation.',
+    'msg_esl_rule_added' => 'Your suggestion has been added.',
+
+    # Edit rule
+    'mt_edwardsnowdenland_ruleedit' => 'Edit rule suggestion',
+    'esl_info_rule_edit' => 'Please edit your rule suggestion until you are satisfied. Then put the suggestion into discussion state.',
+    'btn_start_discussion' => 'Start discussion',
+    'btn_start_voting' => 'StartVoting',
+    'msg_esl_rule_edited' => 'This suggestion has been edited. If you are satisfied, put it into discussion state.',
+    'err_esl_cannot_start_discussion' => 'Cannot start discussion for this suggestion. It probably has been started already.',
+    'msg_esl_discussion_started' => 'Your suggestion has been put into discussion state. %s E-Mails have been sent to our users.',
+    'err_esl_rule_edit_perm' => 'You are not allowed to edit this suggestion. Only staff and the creator can do this.',
+
+    # Discussion mail
+    'mails_esl_disc_started' => '%s Discussion started [%s]',
+    'mailb_esl_disc_started' => 'Dear %s,
+A new topic is being discussed on %s.
+    
+Country: %s
+Topic: %s
+Creator: %s
+======================================================
+%s
+======================================================
+If you like, you can join the discussion with the following link:
+%s
+    
+Kind Regards
+The %2$s Team',
+    'esl_mlink_comment' => 'Comment on it',
 
     # Music
     'mt_edwardsnowdenland_music' => 'Friedensmusik',

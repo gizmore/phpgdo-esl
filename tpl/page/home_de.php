@@ -8,7 +8,7 @@
     Bei Mehrheit erstellen wir eine Petition für das Thema.
 </p>
 
-<p>Das ESL wird als fiktives Land hinzugefügt, wo wir Regelvorschläge für das Internet aufstellen.</p>
+<p>Das ESL wird als fiktives Land hinzugefügt, wo wir Regelvorschläge für das Internet oder das perfekte Land aufstellen.</p>
 
 <p>Ein Etappenziel ist eine Petition mit der Forderung nach direkter Demokratie.</p>
 

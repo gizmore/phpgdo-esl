@@ -3,6 +3,7 @@ namespace GDO\EdwardSnowdenLand\Method;
 
 use GDO\Comments\Comments_Write;
 use GDO\Comments\GDO_CommentTable;
+use GDO\EdwardSnowdenLand\ESL_Rule;
 use GDO\EdwardSnowdenLand\ESL_RuleComments;
 
 final class RuleAddComment extends Comments_Write
@@ -13,8 +14,14 @@ final class RuleAddComment extends Comments_Write
         return ESL_RuleComments::table();
     }
 
+    public function getRule(): ESL_Rule
+    {
+        return $this->getObject();
+    }
+
     public function hrefList(): string
     {
-        return href('EdwardSnowdenLand', 'RuleComments');
+        $rule = $this->getRule();
+        return href('EdwardSnowdenLand', 'Rule', "&id={$rule->getID()}");
     }
 }

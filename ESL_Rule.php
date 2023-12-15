@@ -8,9 +8,12 @@ use GDO\Core\GDT_AutoInc;
 use GDO\Core\GDT_Checkbox;
 use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
+use GDO\Country\GDO_Country;
 use GDO\Country\GDT_Country;
+use GDO\Date\Time;
 use GDO\UI\GDT_Card;
 use GDO\UI\GDT_Divider;
+use GDO\UI\GDT_Link;
 use GDO\UI\GDT_Message;
 use GDO\UI\GDT_Title;
 use GDO\User\GDO_User;
@@ -26,11 +29,20 @@ class ESL_Rule extends GDO
 
     public function gdoVoteAllowed(GDO_User $user)
     {
+        if ($this->getCreator() === $user)
+        {
+            return false;
+        }
+        return $user->isMember();
+    }
 
+    public function getName(): ?string
+    {
+        return sprintf('%s#%s', $this->getID(), $this->getTitle());
     }
 
 
-	public function gdoColumns(): array
+    public function gdoColumns(): array
 	{
 		return [
 			GDT_AutoInc::make('rule_id'),
@@ -47,9 +59,9 @@ class ESL_Rule extends GDO
             GDT_Message::make('rule_suggestion')->label('esl_rule_suggestion'),
             GDT_Message::make('rule_goal')->notNull()->label('esl_rule_goal'),
 
-            GDT_Checkbox::make('rule_edited_state')->label('esl_rule_edited_state'),
-            GDT_Checkbox::make('rule_discuss_state')->label('esl_rule_discuss_state'),
-            GDT_Checkbox::make('rule_vote_state')->label('esl_rule_vote_state'),
+//            GDT_Checkbox::make('rule_edited_state')->label('esl_rule_edited_state'),
+            GDT_Checkbox::make('rule_discuss_state')->label('esl_rule_discuss_state')->notNull()->initial('0'),
+            GDT_Checkbox::make('rule_vote_state')->label('esl_rule_vote_state')->notNull()->initial('0'),
             GDT_Checkbox::make('rule_petition_state')->label('esl_rule_petition_state'),
 
             GDT_CreatedAt::make('rule_created'),
@@ -59,9 +71,39 @@ class ESL_Rule extends GDO
 
     public function inDiscussion(): bool { return $this->gdoValue('rule_discuss_state'); }
 
+    public function inVotings(): bool { return $this->gdoValue('rule_vote_state'); }
+
+    public function canBePutInVotings(): bool
+    {
+        if ($this->inVotings())
+        {
+            return false;
+        }
+        $duration = Module_EdwardSnowdenLand::instance()->cfgMinAgeForVoteDuration();
+        return $this->getAge() >= $duration;
+    }
+
+    public function canStartDiscussion(): bool
+    {
+        if ($this->inDiscussion() || $this->inVotings())
+        {
+            return false;
+        }
+        return true;
+    }
+
     public function getTitle(): string { return $this->gdoVar('rule_title'); }
 
+    public function getCreated(): string { return $this->gdoVar('rule_created'); }
+
+    public function getCreator(): GDO_User { return $this->gdoValue('rule_creator'); }
+
+    public function getCountry(): GDO_Country { return $this->gdoValue('rule_country'); }
+
     public function getMetaDescr(): string { return $this->gdoVar('rule_description_text'); }
+
+    public function getAge(): int { return Time::getAge($this->getCreated()); }
+
 
     public function href_view(): string { return href('EdwardSnowdenLand', 'Rule', "&id={$this->getID()}"); }
 
@@ -70,6 +112,8 @@ class ESL_Rule extends GDO
     ##############
     ### Render ###
     ##############
+    public function renderTitle(): string { return $this->gdoVar('rule_title'); }
+
     public function renderCard(): string
     {
         $card = GDT_Card::make()->gdo($this);
@@ -78,17 +122,22 @@ class ESL_Rule extends GDO
             $this->gdoColumn('rule_country'),
             $this->gdoColumn('rule_title'),
             $this->gdoColumn('rule_description'),
-            GDT_Divider::make(),
+            GDT_Divider::make('esl_div_now'),
             $this->gdoColumn('rule_current'),
             $this->gdoColumn('rule_problem'),
-            GDT_Divider::make(),
+            GDT_Divider::make('esl_div_gov'),
             $this->gdoColumn('rule_government'),
             $this->gdoColumn('rule_mistake'),
-            GDT_Divider::make(),
+            GDT_Divider::make('esl_div_we'),
             $this->gdoColumn('rule_suggestion'),
             $this->gdoColumn('rule_goal'),
         );
         return $card->renderCard();
+    }
+
+    public function linkComment(): GDT_Link
+    {
+        return GDT_Link::make()->label('esl_mlink_comment')->href(url('EdwardSnowdenLand', 'RuleAddComment', "&id={$this->getID()}"));
     }
 
 

@@ -6,6 +6,7 @@ use GDO\Avatar\GDO_Avatar;
 use GDO\Avatar\GDO_UserAvatar;
 use GDO\Avatar\Module_Avatar;
 use GDO\Comments\GDO_Comment;
+use GDO\Comments\Module_Comments;
 use GDO\Core\GDO;
 use GDO\Core\GDO_DBException;
 use GDO\Core\GDO_Exception;
@@ -51,6 +52,7 @@ class Install
         self::installCountry();
 		self::installPermissions();
         self::installGizmore();
+        self::installTestUsers();
         self::installPresidents();
         self::installMinisters();
         self::installRules();
@@ -64,6 +66,7 @@ class Install
         Module_Language::instance()->saveConfigVar('languages', '["en","de"]');
         Module_Avatar::instance()->saveConfigVar('hook_sidebar', '0');
         Module_Register::instance()->saveVar('module_enabled', '1');
+        Module_Comments::instance()->saveConfigVar('comment_approval_guest', '0');
 
         # Favicon
         $m = Module_Favicon::instance();
@@ -106,6 +109,8 @@ class Install
         $secrets = require Module_EdwardSnowdenLand::instance()->filePath('secret.php');
         $password = $secrets['gizmore_pass'];
         $user->saveSettingVar('Login', 'password', BCrypt::create($password)->__toString());
+        $user->saveSettingVar('Mail', 'email', 'gizmore@es-land.net');
+        $user->saveSettingVar('Mail', 'email_confirmed', Time::getDate());
 
         GDO_UserPermission::grant($user, GDO_Permission::ADMIN);
         GDO_UserPermission::grant($user, GDO_Permission::STAFF);
@@ -123,6 +128,34 @@ class Install
             GDO_UserAvatar::updateAvatar($user, $avatar->getID());
         }
     }
+    private static function installTestUsers()
+    {
+        $users = [
+            'DejaVu',
+        ];
+        foreach ($users as $username)
+        {
+            self::installTestUser($username);
+        }
+    }
+
+    private static function installTestUser($username)
+    {
+        if (!$user = GDO_User::getByName($username))
+        {
+            $user = GDO_User::blank([
+                'user_name' => $username,
+                'user_type' => GDT_UserType::MEMBER,
+            ])->insert();
+
+        }
+        $secrets = require Module_EdwardSnowdenLand::instance()->filePath('secret.php');
+        $password = $secrets["{$username}_pass"];
+        $user->saveSettingVar('Login', 'password', BCrypt::create($password)->__toString());
+        $user->saveSettingVar('Mail', 'email', $secrets["{$username}_mail"]);
+        $user->saveSettingVar('Mail', 'email_confirmed', Time::getDate());
+    }
+
     private static function installPresidents()
     {
     }

@@ -8,10 +8,12 @@ use GDO\Core\GDO_Module;
 use GDO\Core\GDT_Method;
 use GDO\Core\Method;
 use GDO\Country\GDT_Country;
+use GDO\Date\GDT_Duration;
 use GDO\EdwardSnowdenLand\Method\Home;
 use GDO\EdwardSnowdenLand\Method\SetCountry;
 use GDO\UI\GDT_Link;
 use GDO\UI\GDT_Page;
+use GDO\User\GDO_User;
 use GDO\User\GDT_User;
 
 /**
@@ -61,6 +63,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'Admin',
             'Avatar',
             'Bootstrap5Theme',
+            'Captcha',
             'Contact',
             'Cronjob',
             'IP2Country',
@@ -75,7 +78,6 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'Votes',
 		];
 	}
-
 
 
     public function getClasses(): array
@@ -96,8 +98,10 @@ class Module_EdwardSnowdenLand extends GDO_Module
         $bar->addField(GDT_Link::make('module_esl')->href(href('EdwardSnowdenLand', 'Home')));
 
         $bar = GDT_Page::instance()->leftBar();
+        $canAddRule = GDO_User::current()->isMember();
         $bar->addField(GDT_Method::make()->method(SetCountry::make()));
         $bar->addField(GDT_Link::make('list_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));
+        $bar->addField(GDT_Link::make('mt_edwardsnowdenland_ruleadd')->enabled($canAddRule)->href(href('EdwardSnowdenLand', 'RuleAdd')));
         $bar->addField(GDT_Link::make('mt_edwardsnowdenland_music')->href(href('EdwardSnowdenLand', 'Music')));
 
 
@@ -110,8 +114,12 @@ class Module_EdwardSnowdenLand extends GDO_Module
     {
         return [
             GDT_User::make('president')->notNull()->initial('1'),
+            GDT_Duration::make('min_discussion_time')->notNull()->initial('7d'),
         ];
     }
+
+    public function cfgMinAgeForVoteDuration(): int { return $this->getConfigValue('min_discussion_time'); }
+
 
     public function getUserSettings(): array
     {
@@ -119,5 +127,6 @@ class Module_EdwardSnowdenLand extends GDO_Module
             GDT_Country::make('esl_country'),
         ];
     }
+
 
 }
