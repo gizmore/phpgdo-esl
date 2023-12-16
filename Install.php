@@ -173,7 +173,14 @@ class Install
 
         foreach ($data as $id => $d)
         {
-            self::installRule($id, $d);
+            if (!$d['goal'])
+            {
+                echo "Skipping one suggestion...";
+            }
+            else
+            {
+                self::installRule($id, $d);
+            }
         }
     }
 
@@ -199,14 +206,24 @@ class Install
             'rule_suggestion' => $data['we'],
             'rule_goal' => $data['goal'],
 
-            'rule_discuss_state' => '1',
-            'rule_vote_state' => '1',
-            'rule_petition_state' => $data['petition'],
+            'rule_discuss_started' => Time::getDate(1702204452),
 
             'rule_created' => Time::getDate(1702204452),
             'rule_creator' => self::gizmore()->getID(),
 
-        ])->softReplace();
+        ]);
+
+        if ($data['voting'])
+        {
+            $rule->setVar('rule_vote_started', Time::getDate(1702204452));
+        }
+
+        if ($data['petition'])
+        {
+            $rule->setVar('rule_petition_created', $data['petition']);
+        }
+
+        $rule->softReplace();
 
         foreach ($data['disc'] as $username => $msg)
         {

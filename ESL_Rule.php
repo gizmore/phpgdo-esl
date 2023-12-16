@@ -10,6 +10,7 @@ use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
 use GDO\Country\GDO_Country;
 use GDO\Country\GDT_Country;
+use GDO\Date\GDT_Timestamp;
 use GDO\Date\Time;
 use GDO\UI\GDT_Card;
 use GDO\UI\GDT_Divider;
@@ -59,19 +60,38 @@ class ESL_Rule extends GDO
             GDT_Message::make('rule_suggestion')->label('esl_rule_suggestion'),
             GDT_Message::make('rule_goal')->notNull()->label('esl_rule_goal'),
 
-//            GDT_Checkbox::make('rule_edited_state')->label('esl_rule_edited_state'),
-            GDT_Checkbox::make('rule_discuss_state')->label('esl_rule_discuss_state')->notNull()->initial('0'),
-            GDT_Checkbox::make('rule_vote_state')->label('esl_rule_vote_state')->notNull()->initial('0'),
-            GDT_Checkbox::make('rule_petition_state')->label('esl_rule_petition_state'),
+            GDT_Timestamp::make('rule_disc_started')->label('esl_rule_discuss_state'),
+            GDT_Timestamp::make('rule_disc_ended')->label('esl_rule_discuss_ended'),
+
+            GDT_Timestamp::make('rule_vote_started')->label('esl_rule_vote_state'),
+            GDT_Timestamp::make('rule_vote_ended')->label('esl_rule_vote_ended'),
+
+            GDT_Timestamp::make('rule_closed')->label('esl_rule_closed'),
+
+            GDT_Timestamp::make('rule_petition_created')->label('esl_rule_petition_created'),
 
             GDT_CreatedAt::make('rule_created'),
 			GDT_CreatedBy::make('rule_creator'),
 		];
 	}
 
-    public function inDiscussion(): bool { return $this->gdoValue('rule_discuss_state'); }
+    public function inDiscussion(): bool
+    {
+        return ($this->gdoVar('rule_discuss_started') !== null) &&
+            ($this->gdoVar('rule_discuss_ended') === null);
+    }
 
-    public function inVotings(): bool { return $this->gdoValue('rule_vote_state'); }
+    public function isDiscussionEnded(): bool
+    {
+        return $this->gdoVar('rule_discuss_ended') !== null;
+    }
+
+
+    public function inVotings(): bool
+    {
+        return ($this->gdoVar('rule_vote_started') !== null) &&
+            ($this->gdoVar('rule_vote_ended') === null);
+    }
 
     public function canBePutInVotings(): bool
     {
@@ -85,6 +105,10 @@ class ESL_Rule extends GDO
 
     public function canStartDiscussion(): bool
     {
+        if ($this->isDiscussionEnded())
+        {
+            return false;
+        }
         if ($this->inDiscussion() || $this->inVotings())
         {
             return false;
