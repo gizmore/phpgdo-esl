@@ -62,6 +62,27 @@ Kind Regards
 The %2$s Team',
     'esl_mlink_comment' => 'Comment on it',
 
+    'err_esl_voting_start' => 'The votings cannot be started, as they are running or closed already.',
+    'mails_esl_voting_started' => '%s Votings started [%s]',
+    'mailb_esl_voting_started' => 'Dear %s
+The votings for the following topic on %s has started:
+
+%s
+
+==========================================
+
+Please vote for this entry.
+
+%s
+
+or
+
+%s
+
+Kind Regards,
+The %2$s Team',
+
+
     # Music
     'mt_edwardsnowdenland_music' => 'Friedensmusik',
     'md_edwardsnowdenland_music' => 'Musik bringt die Menschen zusammen. Hier ist eine Playlist mit Liedern die zum Thema Frieden passen. Vorschläge sind Willkommen.',

@@ -52,7 +52,7 @@ return [
         'country' => 'DE',
         'topic' => 'Cannabis',
         'descr' => 'Das neue Cannabis-Gesetz ist widersprüchlich und nicht gut durchdacht.',
-        'is' => 'Die Bundesländer geben eine geringe vor, deren Besitz meist nicht zur Strafverfolgung führt. Der Anbau und Verkauf sind strafbar.',
+        'is' => 'Die Bundesländer geben eine geringe Menge vor, deren Besitz meist nicht zur Strafverfolgung führt. Der Anbau und Verkauf sind strafbar.',
         'problem' => 'Als Konsument fühlt man sich oftmals wie ein Verbrecher. Als Verkäufer oder Züchter ist man einer. Das Cannabis vom Schwarzmarkt ist oftmals gestreckt oder mit Dünger verunreinigt.',
         'gov' => 'Die Regierung will nun eine etwas höhere geringe Menge im Besitz erlauben. Der private Anbau ist erlaubt. Die Abgabe soll über Vereine erfolgen.',
         'error' => 'Die Qualität ist weiterhin nicht gesichert. Es gibt kaum Steuereinnahmen.',
@@ -62,6 +62,22 @@ return [
             'gizmore' => 'Wie hoch ist die geringe Menge als Züchter?'
         ],
         'voting' => '1',
+        'petition' => null,
+    ],
+
+    '47' => [
+        'country' => 'DE',
+        'topic' => 'Kindergeld',
+        'descr' => 'Das Kindergeldsystem kann optimiert werden, um Kosten zu sparen.',
+        'is' => 'Zur Zeit erhalten die Eltern für jedes Kind ca. 350 Euro Kindergeld.',
+        'problem' => 'Einige nutzen dieses System gezielt aus.',
+        'gov' => 'Kindergeld soll wegen Inflation vllt erhöht werden.',
+        'error' => '',
+        'we' => 'Das Kindergeld sollte gestaffelt reduziert werden. Für die erstgeborenen (evtl. Zwillinge) gibt es €300 pro Kind. Für den zweiten Schwung je 200. Für das 3. Kind/Schwung 100. Ab da nichts mehr.',
+        'goal' => 'Damit sollen Kosten reduziert werden. Kleidung kann aufgetragen werden, Nahrungsmittelversorgung sollte ebenfalls passen.',
+        'disc' => [
+        ],
+        'voting' => '0',
         'petition' => null,
     ],
 ];

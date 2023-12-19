@@ -18,17 +18,18 @@ use GDO\UI\GDT_Link;
 use GDO\UI\GDT_Message;
 use GDO\UI\GDT_Title;
 use GDO\User\GDO_User;
+use GDO\Votes\WithLikes;
 use GDO\Votes\WithVotes;
 
 class ESL_Rule extends GDO
 {
 
-	use WithVotes;
+	use WithLikes;
     use CommentedObject;
 
-    public function gdoVoteTable() { return ESL_RuleVotes::table(); }
+    public function gdoLikeTable() { return ESL_RuleLikes::table(); }
 
-    public function gdoVoteAllowed(GDO_User $user)
+    public function gdoCanLike(GDO_User $user)
     {
         if ($this->getCreator() === $user)
         {
@@ -92,6 +93,17 @@ class ESL_Rule extends GDO
         return ($this->gdoVar('rule_vote_started') !== null) &&
             ($this->gdoVar('rule_vote_ended') === null);
     }
+
+    public function hasVotingsStarted(): bool
+    {
+        return $this->gdoVar('rule_vote_started') !== null;
+    }
+
+    public function hasVotingsEnded(): bool
+    {
+        return $this->gdoVar('rule_vote_ended') !== null;
+    }
+
 
     public function canBePutInVotings(): bool
     {
@@ -162,6 +174,11 @@ class ESL_Rule extends GDO
     public function linkComment(): GDT_Link
     {
         return GDT_Link::make()->label('esl_mlink_comment')->href(url('EdwardSnowdenLand', 'RuleAddComment', "&id={$this->getID()}"));
+    }
+
+    public function linkVoteUp(): GDT_Link
+    {
+        return GDT_Link::make()->label('esl_mlink_vote_up')->href(urlNoSeo('EdwardSnowdenLand', 'RuleVoteMail'));
     }
 
 

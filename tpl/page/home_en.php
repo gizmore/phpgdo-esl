@@ -24,8 +24,8 @@
 
 <h3>Support us</h3>
 
-<p>Register or just join the discussion in a supported messanger.
-    You can just idle there to show support.
+<p>Register or just join the discussion in a supported messenger.
+    You can just idle there to show support. Just click on one of the invitation links.
     We are also happy to help you with any private problems.</p>
 
 <pre>

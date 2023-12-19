@@ -26,6 +26,7 @@ Wir wollen die Welt mit diesem Projekt ein Stückchen besser und gerechter mache
 
 <p>Registriere Dich, oder diskutiere mit einem unterstützten Messange mit.
     Du musst nichts schreiben. Die Nutzerzahl erhöhen und Präsenz zeigen hilft uns schon.
+    Klicke einfach auf einen der Einladungs-Links.
 Wir helfen Dir auch gerne bei privaten Problemen, wenn wir können.</p>
 
 <pre>

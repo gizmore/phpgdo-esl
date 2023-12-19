@@ -5,9 +5,12 @@ use GDO\Core\GDO_ArgError;
 use GDO\Core\GDO_DBException;
 use GDO\Core\GDT;
 use GDO\Core\GDT_Object;
+use GDO\Date\Time;
 use GDO\EdwardSnowdenLand\ESL_Rule;
 use GDO\Form\GDT_Form;
 use GDO\Form\MethodForm;
+use GDO\Language\GDO_Language;
+use GDO\Language\Trans;
 use GDO\Mail\Mail;
 use GDO\UI\GDT_Divider;
 use GDO\UI\GDT_EditButton;
@@ -151,6 +154,50 @@ final class RuleEdit extends MethodForm
     ### Start Voting ###
     ####################
 
+    /**
+     * @throws GDO_DBException
+     * @throws GDO_ArgError
+     */
+    public function onStartVoting(): GDT
+    {
+        $rule = $this->getRule();
+        if ($rule->hasVotingsStarted() || $rule->hasVotingsEnded())
+        {
+            return $this->error('err_esl_voting_start');
+        }
 
+        $this->sendVotingMails($rule);
+
+        $rule->saveVar('rule_vote_started', Time::getDate());
+
+        return $this->message('msg_esl_voting_started')->addField($this->renderPage());
+    }
+
+    private function sendVotingMails(ESL_Rule $rule): void
+    {
+        $old = Trans::$ISO;
+        $users = GDO_User::table()->select()->where("user_type='member'")->exec();
+        while ($user = $users->fetchObject())
+        {
+            Trans::setISO($user->getLangISO());
+            $this->sendVotingMail($user, $rule);
+        }
+        Trans::setISO($old);
+    }
+
+    private function sendVotingMail(GDO_User $user, ESL_Rule $rule): void
+    {
+        $mail = Mail::botMail();
+        $mail->setSubject(t('mails_esl_voting_started', $rule->getName(), sitename()));
+        $args = [
+            $user->renderUserName(),
+            sitename(),
+            $rule->renderMail(),
+            $rule->linkVoteUp(),
+            $rule->linkVoteDown(),
+        ];
+        $mail->setBody(t('mailb_esl_voting_started', $args));
+        $mail->sendToUser($user);
+    }
 
 }
