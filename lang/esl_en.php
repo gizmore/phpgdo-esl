@@ -32,7 +32,7 @@ return array(
 
     # Add rule
     'mt_edwardsnowdenland_ruleadd' => 'Add suggestion',
-    'info_esl_create_rule' => 'Please note that you cannot edit your texts anymore, when the topic was put into discussion state. Until then, you can freely edit your rule after creation.',
+    'info_esl_create_rule' => 'You should write your suggestion in the countries primary language, or your native language. Please note that you cannot edit your texts anymore, when the topic was put into discussion state. Until then, you can freely edit your rule after creation.',
     'msg_esl_rule_added' => 'Your suggestion has been added.',
 
     # Edit rule
