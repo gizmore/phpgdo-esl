@@ -9,6 +9,7 @@ return array(
 
     # Rules
     'list_edwardsnowdenland_rules' => 'Topics',
+    'info_esl_rules' => 'Here are the topics being discussed. To create a new topic; There is a button in the left menu.',
     'topic' => 'Topic',
 
     # Rule

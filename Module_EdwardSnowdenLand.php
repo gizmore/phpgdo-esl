@@ -100,7 +100,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
 
         $bar = GDT_Page::instance()->leftBar();
         $canAddRule = GDO_User::current()->isMember();
-        $bar->addField(GDT_Method::make()->method(SetCountry::make()));
+//        $bar->addField(GDT_Method::make()->method(SetCountry::make()));
         $bar->addField(GDT_Link::make('list_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));
         $bar->addField(GDT_Link::make('mt_edwardsnowdenland_ruleadd')->enabled($canAddRule)->href(href('EdwardSnowdenLand', 'RuleAdd')));
         $bar->addField(GDT_Link::make('mt_edwardsnowdenland_music')->href(href('EdwardSnowdenLand', 'Music')));
@@ -125,7 +125,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
     public function getUserSettings(): array
     {
         return [
-            GDT_Country::make('esl_country'),
+//            GDT_Country::make('esl_country'),
         ];
     }
 
