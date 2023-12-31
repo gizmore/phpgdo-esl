@@ -30,6 +30,22 @@ return [
         'disc' => [
         ],
         'voting' => '0',
+        'petition' => '2023-06-07 13:37:42.666',
+        'pet_url' => 'https://www.change.org/p/direkte-demokratie-f%C3%BCr-deutschland',
+    ],
+    '4' => [
+        'country' => 'DE',
+        'topic' => 'Deutschlandticket',
+        'descr' => 'Das Deutschlandticket ist schlecht umgesetzt und Diskriminierend.',
+        'is' => 'Das Ticket kann nur Online bestellt werden, ein Smartphone ist anscheinend Pflicht, genauso wie ein fester Wohnsitz und ein immer gedecktes Konto.',
+        'problem' => 'Die Hürde beim Bestellen ist enorm. Obdachlose und Menschen ohne Handy sind aussen vor. Barrierefrei ist es wohl auch nicht so.',
+        'gov' => '',
+        'error' => '',
+        'we' => 'Das Deutschlandticket sollte auch Bar, ohne Abbo, erhältlich sein.',
+        'goal' => 'Dies erzeugt günstigen Transport für mehr Bürger.',
+        'disc' => [
+        ],
+        'voting' => '0',
         'petition' => null,
     ],
     '5' => [

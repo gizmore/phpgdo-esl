@@ -12,10 +12,12 @@ use GDO\Country\GDO_Country;
 use GDO\Country\GDT_Country;
 use GDO\Date\GDT_Timestamp;
 use GDO\Date\Time;
+use GDO\Net\GDT_Url;
 use GDO\UI\GDT_Card;
 use GDO\UI\GDT_Divider;
 use GDO\UI\GDT_Link;
 use GDO\UI\GDT_Message;
+use GDO\UI\GDT_Textarea;
 use GDO\UI\GDT_Title;
 use GDO\User\GDO_User;
 use GDO\Votes\WithLikes;
@@ -68,6 +70,10 @@ class ESL_Rule extends GDO
             GDT_Timestamp::make('rule_vote_ended')->label('esl_rule_vote_ended'),
 
             GDT_Timestamp::make('rule_closed')->label('esl_rule_closed'),
+
+            GDT_Textarea::make('rule_petition')->label('esl_rule_petition'),
+            GDT_Url::make('rule_petition_url'),
+            GDT_ESLPetitionState::make('rule_petition_state'),
 
             GDT_Timestamp::make('rule_petition_created')->label('esl_rule_petition_created'),
 
@@ -140,6 +146,8 @@ class ESL_Rule extends GDO
 
     public function getAge(): int { return Time::getAge($this->getCreated()); }
 
+    public function getURL(): string { return $this->gdoVar('rule_petition_url'); }
+
 
     public function href_view(): string { return href('EdwardSnowdenLand', 'Rule', "&id={$this->getID()}"); }
 
@@ -180,6 +188,5 @@ class ESL_Rule extends GDO
     {
         return GDT_Link::make()->label('esl_mlink_vote_up')->href(urlNoSeo('EdwardSnowdenLand', 'RuleVoteMail'));
     }
-
 
 }

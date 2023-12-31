@@ -89,8 +89,14 @@ The %2$s Team',
     'md_edwardsnowdenland_music' => 'Musik bringt die Menschen zusammen. Hier ist eine Playlist mit Liedern die zum Thema Frieden passen. Vorschläge sind Willkommen.',
 
 
-
-
+    # Petition State
+    'esl_petition_state' => 'Petition',
+    'tt_eslps_new' => 'There is no petition created for this topic yet.',
+    'tt_eslps_created' => 'The petition has be created and is currently being voted on.',
+    'tt_eslps_voted' => 'The petition is about being published.',
+    'tt_eslps_published' => 'The petition has been published on change.org',
+    'tt_eslps_succeeded' => 'The petition has reached more than 50,000 subscribers.',
+    'tt_eslps_failed' => 'The petition has failed.',
 
 
     # Suggest President

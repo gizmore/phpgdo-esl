@@ -223,6 +223,12 @@ class Install
             $rule->setVar('rule_petition_created', $data['petition']);
         }
 
+        if (isset($data['pet_url']))
+        {
+            $rule->setVar('rule_petition_url', $data['pet_url']);
+            $rule->setVar('rule_petition_state', GDT_ESLPetitionState::PUBLISHED);
+        }
+
         $rule->softReplace();
 
         foreach ($data['disc'] as $username => $msg)

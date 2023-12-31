@@ -4,6 +4,7 @@ namespace GDO\EdwardSnowdenLand\Method;
 
 use GDO\Core\GDO;
 use GDO\EdwardSnowdenLand\ESL_Rule;
+use GDO\EdwardSnowdenLand\GDT_ESLPetitionState;
 use GDO\Table\GDT_Table;
 use GDO\Table\MethodQueryTable;
 use GDO\UI\GDT_Button;
@@ -25,7 +26,7 @@ class Rules extends MethodQueryTable
             GDT_EditButton::make('edit'),
         ];
         $table = $this->gdoTable();
-        $fromgdo = $table->gdoColumnsOnly('rule_id', 'rule_country', 'rule_title', 'rule_description', 'rule_created');
+        $fromgdo = $table->gdoColumnsOnly('rule_id', 'rule_petition_state', 'rule_country', 'rule_title', 'rule_description', 'rule_created');
         return array_merge($headers, $fromgdo);
     }
 
