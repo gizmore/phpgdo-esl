@@ -19,15 +19,18 @@
 <p>In Deutschland sind große Teile der Bevölkerung unzufrieden mit der Politik.
 Die derzeitige Koalition scheint festgefahren. Lobbyismus regiert stark mit, und es gibt weitere Mißstände.
 Wir wollen die Welt mit diesem Projekt ein Stückchen besser und gerechter machen.
-    Auch helfen wir uns in dieser Community.
+Auch helfen wir uns in dieser Community gegenseitig.
 </p>
 
 <h3>Unterstützung</h3>
 
-<p>Registriere Dich, oder diskutiere mit einem unterstützten Messange mit.
-    Du musst nichts schreiben. Die Nutzerzahl erhöhen und Präsenz zeigen hilft uns schon.
+<p>
+    Es gibt bereits eine erste Petition, die wir unterstützen.
+    Bitte unterzeichne <a href="https://www.change.org/p/direkte-demokratie-f%C3%BCr-deutschland" rel="nofollow">Direkte Demokratie Deutschland</a>.
+    Auch: Registriere Dich hier, oder diskutiere mit einem unterstützten Messanger.
+    Du musst nichts schreiben. Die Nutzerzahl erhöhen und Präsenz zeigen hilft schon.
     Klicke einfach auf einen der Einladungs-Links.
-Wir helfen Dir auch gerne bei privaten Problemen, wenn wir können.</p>
+Wir helfen Dir auch gerne bei privaten Problemen, falls wir können.</p>
 
 <pre>
     <a href="https://chat.whatsapp.com/HV73ewIenE6GtSbvKGCBd3">WhatsApp</a>

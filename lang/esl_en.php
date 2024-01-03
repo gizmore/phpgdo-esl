@@ -98,8 +98,8 @@ The %2$s Team',
 
 
     # Music
-    'mt_edwardsnowdenland_music' => 'Friedensmusik',
-    'md_edwardsnowdenland_music' => 'Musik bringt die Menschen zusammen. Hier ist eine Playlist mit Liedern die zum Thema Frieden passen. Vorschläge sind Willkommen.',
+    'mt_edwardsnowdenland_music' => 'Peace Music',
+    'md_edwardsnowdenland_music' => 'Music brings people together. Here are some songs that fit the peaceful theme we wanne provide here. Suggestions are welcome.',
 
 
     # Petition State
@@ -109,7 +109,7 @@ The %2$s Team',
     'tt_eslps_voted' => 'The petition has been voted on, and is about being published.',
     'tt_eslps_published' => 'The petition has been published on change.org and can be signed.',
     'tt_eslps_succeeded' => 'The petition has reached more than 50,000 subscribers.',
-    'tt_eslps_failed' => 'The petition has failed.',
+    'tt_eslps_failed' => 'The petition has failed to reach 50,000 subscribers within reasonable time.',
     'enum_not_yet' => 'None',
     'enum_created' => 'Created',
     'enum_voted' => 'Voted',

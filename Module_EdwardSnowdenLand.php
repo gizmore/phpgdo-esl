@@ -7,6 +7,7 @@ use GDO\Core\GDO_Exception;
 use GDO\Core\GDO_Module;
 use GDO\Core\GDT_Method;
 use GDO\Core\Method;
+use GDO\Core\Website;
 use GDO\Country\GDT_Country;
 use GDO\Date\GDT_Duration;
 use GDO\EdwardSnowdenLand\Method\Home;
@@ -121,13 +122,19 @@ class Module_EdwardSnowdenLand extends GDO_Module
 
     public function cfgMinAgeForVoteDuration(): int { return $this->getConfigValue('min_discussion_time'); }
 
-
     public function getUserSettings(): array
     {
         return [
-//            GDT_Country::make('esl_country'),
         ];
     }
 
+    public function hookBeforeExecute()
+    {
+        global $me;
+        if (!$me->seoMetaImage())
+        {
+            Website::addMeta(['og:image', $this->wwwPath('img/logo1.jpg'), 'property']);
+        }
+    }
 
 }

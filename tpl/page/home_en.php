@@ -24,9 +24,13 @@
 
 <h3>Support us</h3>
 
-<p>Register or just join the discussion in a supported messenger.
+<p>
+    There is already a petition we feature here.
+    Please join <a rel="nofollow" href="https://www.change.org/p/direkte-demokratie-f%C3%BCr-deutschland">Direct Democracy for Germany</a>.
+    Register or just join the discussion for a supported messenger.
     You can just idle there to show support. Just click on one of the invitation links.
-    We are also happy to help you with any private problems.</p>
+    We are also happy to help you with any private problems.
+</p>
 
 <pre>
     <a href="https://chat.whatsapp.com/HV73ewIenE6GtSbvKGCBd3">WhatsApp</a>
