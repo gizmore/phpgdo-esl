@@ -32,7 +32,23 @@ class Rules extends MethodQueryTable
 
     public function onCreateTable(GDT_Table $table): void
     {
-        $table->text('info_esl_rules');
+        $gdo = ESL_Rule::blank();
+        $state = GDT_ESLPetitionState::make('rule_petition_state')->gdo($gdo);
+        $table->text('info_esl_rules', [
+            $this->renderLegendItem($gdo, $state, GDT_ESLPetitionState::NOT_YET),
+            $this->renderLegendItem($gdo, $state, GDT_ESLPetitionState::CREATED),
+            $this->renderLegendItem($gdo, $state, GDT_ESLPetitionState::VOTED),
+            $this->renderLegendItem($gdo, $state, GDT_ESLPetitionState::PUBLISHED),
+            $this->renderLegendItem($gdo, $state, GDT_ESLPetitionState::SUCCEEDED),
+            $this->renderLegendItem($gdo, $state, GDT_ESLPetitionState::FAILED),
+            $state->renderHTML(),
+        ]);
+    }
+
+    private function renderLegendItem(ESL_Rule $gdo, GDT_ESLPetitionState $gdt, string $state): string
+    {
+        $gdo->setVar('rule_petition_state', $state);
+        return $gdt->gdo($gdo)->renderHTML();
     }
 
 }

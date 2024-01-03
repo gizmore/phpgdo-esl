@@ -40,6 +40,41 @@ final class GDT_ESLPetitionState extends GDT_Enum
         return $this->gdo;
     }
 
+    public function renderHTML(): string
+    {
+        $icon = null;
+        $tt = null;
+        switch ($this->getVar()) {
+            case self::NOT_YET:
+                $icon = 'minus';
+                $tt = 'tt_eslps_new';
+                break;
+            case self::CREATED:
+                $icon = 'create';
+                $tt = 'tt_eslps_created';
+                break;
+            case self::VOTED:
+                $icon = 'vote';
+                $tt = 'tt_eslps_voted';
+                break;
+            case self::PUBLISHED:
+                $icon = 'trophy';
+                $tt = 'tt_eslps_published';
+                break;
+            case self::SUCCEEDED:
+                $icon = 'thumbs_up';
+                $tt = 'tt_eslps_succeeded';
+                break;
+            case self::FAILED:
+                $icon = 'thumbs_down';
+                $tt = 'tt_eslps_failed';
+                break;
+        }
+        $this->icon($icon);
+
+        return $this->htmlIcon() . t($tt); # . $this->renderVar();
+    }
+
     public function renderCell(): string
     {
         $rule = $this->getRule();
@@ -48,7 +83,7 @@ final class GDT_ESLPetitionState extends GDT_Enum
         switch ($this->getVar())
         {
             case self::NOT_YET:
-                $icon = 'question';
+                $icon = 'minus';
                 $tt = 'tt_eslps_new';
                 break;
             case self::CREATED:

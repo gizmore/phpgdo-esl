@@ -9,7 +9,20 @@ return array(
 
     # Rules
     'list_edwardsnowdenland_rules' => 'Topics',
-    'info_esl_rules' => 'Here are the topics being discussed. To create a new topic; There is a button in the left menu.',
+    'info_esl_rules' => 'Here are the topics being discussed.
+    To create a new topic; There is a button in the left menu.
+    The petition is linked by a small symbol you can click to open the petition.
+    <br/>
+    <br/>
+    Legend for Petition state:<br/>
+    <ol>
+    <li>%s</li>
+    <li>%s</li>
+    <li>%s</li>
+    <li>%s</li>
+    <li>%s</li>
+    <li>%s</li>
+    </ol>',
     'topic' => 'Topic',
 
     # Rule
@@ -31,7 +44,7 @@ return array(
     'esl_div_we' => 'Our proposed changes',
 
     # Add rule
-    'mt_edwardsnowdenland_ruleadd' => 'Add suggestion',
+    'mt_edwardsnowdenland_ruleadd' => 'Add Topic',
     'info_esl_create_rule' => 'You should write your suggestion in the countries primary language, or your native language. Please note that you cannot edit your texts anymore, when the topic was put into discussion state. Until then, you can freely edit your rule after creation.',
     'msg_esl_rule_added' => 'Your suggestion has been added.',
 
@@ -92,12 +105,17 @@ The %2$s Team',
     # Petition State
     'esl_petition_state' => 'Petition',
     'tt_eslps_new' => 'There is no petition created for this topic yet.',
-    'tt_eslps_created' => 'The petition has be created and is currently being voted on.',
-    'tt_eslps_voted' => 'The petition is about being published.',
-    'tt_eslps_published' => 'The petition has been published on change.org',
+    'tt_eslps_created' => 'The petition has been created and is currently being voted on.',
+    'tt_eslps_voted' => 'The petition has been voted on, and is about being published.',
+    'tt_eslps_published' => 'The petition has been published on change.org and can be signed.',
     'tt_eslps_succeeded' => 'The petition has reached more than 50,000 subscribers.',
     'tt_eslps_failed' => 'The petition has failed.',
-
+    'enum_not_yet' => 'None',
+    'enum_created' => 'Created',
+    'enum_voted' => 'Voted',
+    'enum_published' => 'Published',
+    'enum_succeeded' => 'Succeeded',
+    'enum_failed' => 'Failed',
 
     # Suggest President
     'mt_esl_suggestpresident' => 'Suggest President',
