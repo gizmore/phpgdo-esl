@@ -72,10 +72,13 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'Favicon',
             'File',
             'FontAwesome',
+            'Forum',
             'Invite',
+            'Javascript',
             'JQueryAutocomplete',
             'Mail',
             'News',
+            'PM',
             'Register',
             'Votes',
 		];

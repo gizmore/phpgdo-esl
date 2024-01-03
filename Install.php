@@ -15,6 +15,8 @@ use GDO\Crypto\BCrypt;
 use GDO\Date\Time;
 use GDO\Favicon\Module_Favicon;
 use GDO\File\GDO_File;
+use GDO\Forum\GDO_ForumBoard;
+use GDO\Forum\Module_Forum;
 use GDO\Language\Module_Language;
 use GDO\Register\Module_Register;
 use GDO\User\GDO_Permission;
@@ -56,6 +58,7 @@ class Install
         self::installPresidents();
         self::installMinisters();
         self::installRules();
+        self::installForum();
 	}
 
     /**
@@ -284,6 +287,87 @@ class Install
     private static function gizmore(): GDO_User
     {
         return GDO_User::getByName('gizmore');
+    }
+
+    /**
+     * @throws GDO_DBException
+     */
+    private static function installForum(): void
+    {
+        GDO_ForumBoard::blank([
+            'board_id' => '2',
+            'board_title' => 'Politics',
+            'board_description' => 'Political topics are discussed here.',
+            'board_permission' => null,
+            'board_allow_threads' => '0',
+            'board_allow_guests' => '1',
+            'board_sort' => '2',
+            'board_parent' => '1',
+        ])->softReplace();
+        GDO_ForumBoard::blank([
+            'board_id' => '1000',
+            'board_title' => 'Politics in a new Country',
+            'board_description' => 'Political topics for any country that have no forum yet.',
+            'board_permission' => null,
+            'board_allow_threads' => '1',
+            'board_allow_guests' => '1',
+            'board_sort' => '3',
+            'board_parent' => '2',
+        ])->softReplace();
+        GDO_ForumBoard::blank([
+            'board_id' => '3',
+            'board_title' => 'Find & Search',
+            'board_description' => 'Offer or ask for goods and services.',
+            'board_permission' => null,
+            'board_allow_threads' => '1',
+            'board_allow_guests' => '1',
+            'board_sort' => '4',
+            'board_parent' => '1',
+        ])->softReplace();
+        GDO_ForumBoard::blank([
+            'board_id' => '4',
+            'board_title' => 'Open Chat',
+            'board_description' => 'You can discuss everything else here.',
+            'board_permission' => null,
+            'board_allow_threads' => '1',
+            'board_allow_guests' => '1',
+            'board_sort' => '5',
+            'board_parent' => '1',
+        ])->softReplace();
+        self::installForumCountryBoards();
+        GDO_ForumBoard::table()->rebuildFullTree();
+    }
+
+    /**
+     * @throws GDO_DBException
+     */
+    private static function installForumCountryBoards(): void
+    {
+        $countries = ESL_Rule::table()->select('DISTINCT rule_country_t.*')->joinObject('rule_country')->fetchTable(GDO_Country::table())->exec();
+        while ($country = $countries->fetchObject())
+        {
+            self::installForumCountryBoard($country);
+        }
+    }
+
+    /**
+     * @throws GDO_DBException
+     */
+    private static function installForumCountryBoard(GDO_Country $country): void
+    {
+        $iso = $country->getID();
+        $id = (string)(1000 + ord($iso[0]) * 256 + ord($iso[1]));
+        $name = $country->displayEnglishName();
+        GDO_ForumBoard::blank([
+            'board_id' => $id,
+            'board_title' => "Politics in {$name}",
+            'board_description' => "Political topics in {$name}.",
+            'board_permission' => null,
+            'board_allow_threads' => '1',
+            'board_allow_guests' => '1',
+            'board_sort' => $id,
+            'board_parent' => '2',
+        ])->softReplace();
     }
 
 }
