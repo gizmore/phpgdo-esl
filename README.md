@@ -1,16 +1,8 @@
 # phpgdo-esl
 
-Edward Snowden Land - phpgdo demo site for secure and fair ballots and other fantasy stuff.
+Edward Snowden Land - a phpgdo site for promoting petitions on change.org.
 
 ## ESL: About
 
-Edward Snowden Game is a fantasy RPG played online as well as in Real Life.
-
-## ESL: Rules of the Combat Zone
-
-The Combat Zone is a a virtual Zone inside the Matrix,
-where defect Batteries fight over priviledges inside the Matrix.
-
-Over the years, even a bizzare and sick game evolved.
-
-Only the craziest survive there.
+Edward Snowden Land's goal is to create a community to help petitions being successful.
+We discuss political topics and also want to create own petitions and raise the chance of petitions being successful.

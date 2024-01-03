@@ -93,7 +93,6 @@ class Module_EdwardSnowdenLand extends GDO_Module
         ];
     }
 
-
     public function onInitSidebar(): void
     {
         $bar = GDT_Page::instance()->topBar();
@@ -101,15 +100,9 @@ class Module_EdwardSnowdenLand extends GDO_Module
 
         $bar = GDT_Page::instance()->leftBar();
         $canAddRule = GDO_User::current()->isMember();
-//        $bar->addField(GDT_Method::make()->method(SetCountry::make()));
         $bar->addField(GDT_Link::make('list_edwardsnowdenland_rules')->href(href('EdwardSnowdenLand', 'Rules')));
         $bar->addField(GDT_Link::make('mt_edwardsnowdenland_ruleadd')->enabled($canAddRule)->href(href('EdwardSnowdenLand', 'RuleAdd')));
         $bar->addField(GDT_Link::make('mt_edwardsnowdenland_music')->href(href('EdwardSnowdenLand', 'Music')));
-
-
-//        $bar->addField(GDT_Link::make('current_president')->href($this->href('CurrentPresident')));
-//        $bar->addField(GDT_Link::make('current_votings')->href($this->href('CurrentVotings')));
-//        $bar->addField(GDT_Link::make('mt_esl_suggestpresident')->href($this->href('SuggestPresident')));
     }
 
     public function getConfig(): array
@@ -133,7 +126,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
         global $me;
         if (!$me->seoMetaImage())
         {
-            Website::addMeta(['og:image', $this->wwwPath('img/logo1.jpg'), 'property']);
+            Website::addMeta(['og:image', $this->wwwURL('img/logo1.jpg'), 'property']);
         }
     }
 

@@ -19,7 +19,7 @@ return [
     ],
     '2' => [
         'country' => 'DE',
-        'topic' => 'Volksentscheide / Direkte Demokratie',
+        'topic' => 'Direkte Demokratie',
         'descr' => 'Wir wollen Volksabstimmungen in Deutschland einführen, oder sogar direkte Demokratie.',
         'is' => 'Zur Zeit Stimmen Abgeordnete über Gesetze und Regelungen ab. Diese wählen meist das, was die Partei vorgibt.',
         'problem' => 'Es kommt oft Unsinn heraus. Das Volk wird nicht gefragt, und die vorgeschlagenen Regeln sind ein schlechter Kompromiss von der Koalitionsregierung.',

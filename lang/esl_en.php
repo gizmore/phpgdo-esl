@@ -2,6 +2,8 @@
 return array(
 	'module_esl' => 'Edward Snowden Land',
 
+    'site_keywords' => 'Petitions,Direct Democracy,Freedom,Community,gizmore,WeChall,2024,2025,Online,E-Documents,Votings,Help,Politics,Discussion,Forum,Change,change.org,free,open source',
+
     # Home
     'mt_edwardsnowdenland_home' => 'Willkommen',
     'md_edwardsnowdenland_home' => 'Edward Snowden Land is a social experiment for direct democracy, because many governments fail on many topics.
@@ -99,6 +101,7 @@ The %2$s Team',
 
     # Music
     'mt_edwardsnowdenland_music' => 'Peace Music',
+    'mk_edwardsnowdenland_music' => 'Music,Peace Music',
     'md_edwardsnowdenland_music' => 'Music brings people together. Here are some songs that fit the peaceful theme we wanne provide here. Suggestions are welcome.',
 
 
