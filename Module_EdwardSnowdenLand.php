@@ -63,9 +63,9 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'ActivationAlert',
             'Admin',
             'Avatar',
-//            'Bootstrap5Theme',
+            'Bootstrap5Theme',
             'Captcha',
-            'Classic',
+//            'Classic',
             'Contact',
             'Cronjob',
             'IP2Country',
@@ -99,7 +99,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
     public function onInitSidebar(): void
     {
         $bar = GDT_Page::instance()->topBar();
-        $bar->addField(GDT_Link::make('module_esl')->href(href('EdwardSnowdenLand', 'Home')));
+        $bar->addField(GDT_Link::make('module_esl')->href(href('EdwardSnowdenLand', 'Home'))->iconNone()->textRaw('ESL'));
 
         $bar = GDT_Page::instance()->leftBar();
         $canAddRule = GDO_User::current()->isMember();
