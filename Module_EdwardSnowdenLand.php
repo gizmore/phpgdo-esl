@@ -80,6 +80,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'News',
             'PM',
             'Register',
+            'TorChallenge',
             'Votes',
 		];
 	}
