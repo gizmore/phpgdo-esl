@@ -79,6 +79,7 @@ class Module_EdwardSnowdenLand extends GDO_Module
             'Mail',
             'News',
             'PM',
+            'Recovery',
             'Register',
             'TorChallenge',
             'Votes',
