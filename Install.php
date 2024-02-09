@@ -18,6 +18,8 @@ use GDO\File\GDO_File;
 use GDO\Forum\GDO_ForumBoard;
 use GDO\Forum\Module_Forum;
 use GDO\Language\Module_Language;
+use GDO\News\GDO_News;
+use GDO\News\GDO_NewsText;
 use GDO\Register\Module_Register;
 use GDO\User\GDO_Permission;
 use GDO\User\GDO_User;
@@ -59,6 +61,7 @@ class Install
         self::installMinisters();
         self::installRules();
         self::installForum();
+        self::installNews();
 	}
 
     /**
@@ -346,6 +349,7 @@ class Install
         $countries = ESL_Rule::table()->select('DISTINCT rule_country_t.*')->joinObject('rule_country')->fetchTable(GDO_Country::table())->exec();
         while ($country = $countries->fetchObject())
         {
+            /** @var GDO_Country $country */
             self::installForumCountryBoard($country);
         }
     }
@@ -368,6 +372,52 @@ class Install
             'board_sort' => $id,
             'board_parent' => '2',
         ])->softReplace();
+    }
+
+    /**
+     * @throws GDO_DBException
+     */
+    private static function installNews(): void
+    {
+        $date = '2024-02-07 09:36:00.000';
+        $titles = [
+            'en' => 'First News Entry',
+            'de' => 'Erster News Eintrag',
+        ];
+        $texts = [
+            'en' => "Hello and Welcome to Edward Snowden Land.\n\nI am still working on some modules and general design.\nUntil we have our own petitions, please support the direct democracy petition in the first page of this website.",
+            'de' => "Hallo und Willkommen auf Edward Snowden Land.\n\nIch arbeite immer noch an einigen Modulen und dem generellen Design.\nBis wir eigene Petitionen haben, unterstütze bitte die Petition für direkte Demokratie, die auf der Startseite hier verlinkt ist."
+        ];
+        self::installNewsItem($titles, $texts, $date);
+    }
+
+    /**
+     * @throws GDO_DBException
+     */
+    private static function installNewsItem(array $titles, array $texts, string $date): void
+    {
+        if (!GDO_News::getBy('news_created', $date))
+        {
+            $gizmore = self::gizmore();
+            $entry = GDO_News::blank([
+                'news_visible' => '1',
+                'news_send' => $date,
+                'news_sent' => $date,
+                'news_created' => $date,
+                'news_creator' => $gizmore->getID(),
+            ])->insert();
+            foreach ($titles as $iso => $title)
+            {
+                GDO_NewsText::blank([
+                    'newstext_news' => $entry->getID(),
+                    'newstext_lang' => $iso,
+                    'newstext_title' => $title,
+                    'newstext_message' => nl2br($texts[$iso]),
+                    'newstext_created' => $date,
+                    'newstext_creator' => $gizmore->getID(),
+                ])->insert();
+            }
+        }
     }
 
 }
