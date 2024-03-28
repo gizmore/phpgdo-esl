@@ -112,4 +112,20 @@ return [
         'voting' => '0',
         'petition' => null,
     ],
+
+    '49' => [
+        'country' => 'UK',
+        'topic' => 'Julian Assange',
+        'descr' => 'Wir unterstützen die Befreiung von Julian Assange. Informiert euch auf https://www.actvism.org/ und https://writejulian.com/',
+        'is' => '',
+        'problem' => '',
+        'gov' => '',
+        'error' => '',
+        'we' => 'Ausübung von Religion in der Öffentlichkeit verbieten. Hohe Strafen einführen. Auch Fische auf dem Auto sind verboten.',
+        'goal' => 'Relativierung der Religionen. Leichterer Kontakt der unterschiedlichen Menschen.',
+        'disc' => [
+        ],
+        'voting' => '0',
+        'petition' => null,
+    ],
 ];
