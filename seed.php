@@ -114,7 +114,7 @@ return [
     ],
 
     '49' => [
-        'country' => 'UK',
+        'country' => 'GB',
         'topic' => 'Julian Assange',
         'descr' => 'Wir unterstützen die Befreiung von Julian Assange. Informiert euch auf https://www.actvism.org/ und https://writejulian.com/',
         'is' => '',
